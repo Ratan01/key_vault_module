@@ -80,15 +80,15 @@ variable "random_password_length" {
   default     = 32
 }
 
-#variable "certificate_contacts" {
-#  description = "Contact information to send notifications triggered by certificate lifetime events"
-#  type = list(object({
-#    email = string
-#    name  = optional(string)
-#    phone = optional(string)
-#  }))
-#  default = []
-#}
+variable "certificate_contacts" {
+  description = "Contact information to send notifications triggered by certificate lifetime events"
+  type = list(object({
+    email = string
+    name  = optional(string)
+    phone = optional(string)
+  }))
+  default = []
+}
 
 variable "enable_private_endpoint" {
   description = "Manages a Private Endpoint to Azure Container Registry"

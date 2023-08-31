@@ -4,14 +4,14 @@ provider "azurerm" {
 }
 
 module "key-vault" {
-  source  = "kumarvna/key-vault/azurerm"
+  source  = "Ratan01/key-vault/azurerm"
   version = "2.2.0"
 
   # By default, this module will not create a resource group and expect to provide 
   # a existing RG name to use an existing resource group. Location will be same as existing RG. 
   # set the argument to `create_resource_group = true` to create new resrouce.
-  resource_group_name        = "rg-shared-westeurope-01"
-  key_vault_name             = "demo-project-shard"
+  resource_group_name        = "rg-keyvault"
+  key_vault_name             = "keyvault-g1"
   key_vault_sku_pricing_tier = "premium"
 
   # Once `Purge Protection` has been Enabled it's not possible to Disable it

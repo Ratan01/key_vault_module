@@ -217,7 +217,7 @@ resource "azurerm_key_vault_secret" "keys" {
   for_each     = var.secrets
   name         = each.key
   value        = each.value != "" ? each.value : random_password.passwd[each.key].result
-  key_vault_id = azurerm_key_vault.main.id
+  key_vault_id = azurerm_key_vault.main1.id
 
   lifecycle {
     ignore_changes = [
@@ -232,8 +232,8 @@ resource "azurerm_key_vault_secret" "keys" {
 #---------------------------------------------------
 resource "azurerm_monitor_diagnostic_setting" "diag" {
   count                      = var.log_analytics_workspace_id != null ? 1 : 0
-  name                       = lower(format("%s-diag", azurerm_key_vault.main.name))
-  target_resource_id         = azurerm_key_vault.main.id
+  name                       = lower(format("%s-diag", azurerm_key_vault.main1.name))
+  target_resource_id         = azurerm_key_vault.main1.id
   log_analytics_workspace_id = var.log_analytics_workspace_id
   storage_account_id         = var.storage_account_id != null ? var.storage_account_id : null
 

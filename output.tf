@@ -1,16 +1,16 @@
 output "key_vault_id" {
   description = "The ID of the Key Vault."
-  value       = azurerm_key_vault.main.id
+  value       = azurerm_key_vault.main1.id
 }
 
 output "key_vault_name" {
   description = "Name of key vault created."
-  value       = azurerm_key_vault.main.name
+  value       = azurerm_key_vault.main1.name
 }
 
 output "key_vault_uri" {
   description = "The URI of the Key Vault, used for performing operations on keys and secrets."
-  value       = azurerm_key_vault.main.vault_uri
+  value       = azurerm_key_vault.main1.vault_uri
 }
 
 output "secrets" {

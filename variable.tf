@@ -5,17 +5,17 @@ variable "create_resource_group" {
 
 variable "resource_group_name" {
   description = "A container that holds related resources for an Azure solution"
-  default     = ""
+  default     = "rg"
 }
 
 variable "location" {
   description = "The location/region to keep all your network resources. To get the list of all locations with table format from azure cli, run 'az account list-locations -o table'"
-  default     = ""
+  default     = "east us"
 }
 
 variable "key_vault_name" {
   description = "The Name of the key vault"
-  default     = ""
+  default     = "key vault"
 }
 
 variable "key_vault_sku_pricing_tier" {
@@ -97,7 +97,7 @@ variable "enable_private_endpoint" {
 
 variable "virtual_network_name" {
   description = "The name of the virtual network"
-  default     = ""
+  default     = "vn"
 }
 
 variable "existing_vnet_id" {

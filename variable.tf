@@ -6,7 +6,7 @@ variable "create_resource_group" {
 variable "resource_group_name" {
   type = string
   description = "A container that holds related resources for an Azure solution"
-  default     = "rgrp"
+  default     = "rg"
 }
 
 variable "location" {

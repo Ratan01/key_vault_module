@@ -73,7 +73,7 @@ module "key-vault" {
   # Adding additional TAG's to your Azure resources
   tags = {
     ProjectName  = "demo-project"
-    Env          = "dev"
+    Env          = "production"
     Owner        = "user@example.com"
     BusinessUnit = "CORP"
     ServiceClass = "Gold"

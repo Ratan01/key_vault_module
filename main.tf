@@ -115,7 +115,7 @@ data "azuread_service_principal" "adspn" {
 #----------------------------------------------------------
 # Resource Group Creation or selection - Default is "true"
 #----------------------------------------------------------
-data "azurerm_resource_group" "rgrp" {
+data "azurerm_resource_group" "rg" {
   count = var.create_resource_group ? 0 : 1
   name  = var.resource_group_name
 }
@@ -132,7 +132,7 @@ data "azurerm_client_config" "current" {}
 #-------------------------------------------------
 # Keyvault Creation - Default is "true"
 #-------------------------------------------------
-resource "azurerm_key_vault" "main" {
+resource "azurerm_key_vault" "main1" {
   name                            = lower("kv-${var.key_vault_name}")
   location                        = local.location
   resource_group_name             = local.resource_group_name
